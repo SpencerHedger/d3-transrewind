@@ -1,3 +1,9 @@
+/*
+*
+* By Spencer Hedger (spencer@spencerhedger.com)
+* http://www.spencerhedger.com
+* https://github.com/SpencerHedger/d3-transrewind
+*/
 var transRewind = function() {	
 	function _handlestyle(scriptstep, d, rewinding) {
 		var step = scriptstep;
