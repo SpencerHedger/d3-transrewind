@@ -69,6 +69,12 @@ var transRewind = function() {
 		o._scriptCount = 0;
 		onBegin(o);
 		
+		var count = 0;
+		d.each(function() { count++; });
+		
+		// Empty selection?
+		if(count == 0) { onEnd(o); return; }
+		
 		if(!rewinding) {
 			for(var j=0; j < o.transitions.length; j++) {
 				d = _handletransition(o.transitions[j], d,
@@ -115,7 +121,7 @@ var transRewind = function() {
 		
 		for(var i=s.script.length-1; i >= 0; i--) _handlescript(s.script[i], function() {
 				if(s._sCount == 0 && onBegin != undefined && onBegin != null) onBegin(s);
-				s._sCount++
+				s._sCount++;
 			},
 			function() {
 				s._sCount--;
